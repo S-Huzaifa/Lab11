@@ -13,7 +13,24 @@ def show_menu():
     print("4. Calculate Average")
     print("0. Exit")
 
-
+def calculate_grade(average):
+if average >= 85:
+return "A"
+elif average >= 70:
+return "B"
+elif average >= 55:
+return "C"
+elif average >= 40:
+return "D"
+return "F"
+def show_grades():
+if not students:
+print("No students yet.")
+return
+for name, marks in students.items():
+average = sum(marks) / len(marks)
+print(f"{name}: average {average:.1f}, grade 
+{calculate_grade(average)}")
 def main():
     while True:
         show_menu()
